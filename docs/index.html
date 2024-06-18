@@ -10,6 +10,8 @@
 </head>
 <body>
   <div id="app"></div>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script>
     window.$docsify = {
       name: 'PromptExpert',
@@ -23,7 +25,17 @@
      '/zh-cn/': {
         language: '简体中文'
      }
-  }
+    },
+    plugins: [
+        function(hook, vm) {
+          hook.doneEach(function() {
+            // 重新渲染 MathJax
+            if (window.MathJax) {
+              MathJax.typesetPromise();
+            }
+          });
+        }
+      ]
     }
   </script>
   <!-- Docsify v4 -->
