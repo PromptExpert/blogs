@@ -1,4 +1,5 @@
 * [首页](README.md)
-* [大模型基础](llm_foundation.md)
+* [大语言模型](llm.md)
 * [多模态](mllm.md)
+* [笔记](notes.md)
 * [关于我](about.md)
