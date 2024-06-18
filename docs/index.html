@@ -13,6 +13,21 @@
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      }
+    };
+  </script>
+  <script>
     window.$docsify = {
       name: 'PromptExpert',
       // repo: 'https://github.com/PromptExpert/',
@@ -20,13 +35,13 @@
       loadNavbar: true,
       locales: {
         '/': {
-        language: 'English'
+          language: 'English'
+        },
+        '/zh-cn/': {
+          language: '简体中文'
+        }
       },
-     '/zh-cn/': {
-        language: '简体中文'
-     }
-    },
-    plugins: [
+      plugins: [
         function(hook, vm) {
           hook.doneEach(function() {
             // 重新渲染 MathJax
