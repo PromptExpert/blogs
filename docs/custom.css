@@ -1,0 +1,9 @@
+/* 自定义 sidebar 的宽度 */
+.sidebar {
+    width: 150px;
+}
+
+/* 将 200px 替换为你想要的宽度，相同于 sidebar 的宽度 */
+.content {
+    margin-left: 150px; 
+}
