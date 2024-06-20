@@ -3,3 +3,5 @@
 这是一个关于AI技术的博客。
 
 小红书同名。
+
+https://promptexpert.github.io/promptexpert
