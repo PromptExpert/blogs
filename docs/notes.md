@@ -4,3 +4,4 @@
 
 - [Normalization](norm.md)
 - [Video-ChatGPT结构](video_chatgpt.md) 
+- [DSPy理论详解](dspy_theory.md)
