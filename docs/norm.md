@@ -1,4 +1,4 @@
-# Normalization
+# Normalization概述
 
 对于预训练LLMs来说，训练不稳定是一个具有挑战性的问题。为了缓解这个问题，Normalization是稳定神经网络训练的一种广泛采用的策略。
 
