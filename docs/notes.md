@@ -7,3 +7,4 @@
 - [DSPy理论详解](dspy_theory.md)
 - [参数初始化](weight_init.md)
 - [Batch Normalization](notes/bn.md)
+- [ViT](notes/vit.md)
