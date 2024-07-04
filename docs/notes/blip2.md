@@ -331,10 +331,10 @@ https://github.com/salesforce/LAVIS/blob/main/lavis/models/blip2_models/Qformer.
 
 继承BertPreTrainedModel的作用：使用基类中定义的初始化方法，初始化参数为预训练BERT权重。
 
-### Stage1训练代码
+### Stage 1训练代码
 运行命令： https://github.com/salesforce/LAVIS/blob/main/run_scripts/blip2/train/pretrain_stage1.sh
 
-#### pretrain_stage1.yaml
+#### 配置文件pretrain_stage1.yaml
 https://github.com/salesforce/LAVIS/blob/ac8fc98c93c02e2dfb727e24a361c4c309c8dbbc/lavis/projects/blip2/train/pretrain_stage1.yaml
 
 全部训练配置都在这里设置。
@@ -362,6 +362,34 @@ train方法执行训练循环。train_epoch方法训练一个epoch，它再调�
 
 _save_checkpoint解释：
 <iframe src="notes/save_checkpoint.html" width="100%" height="600px"></iframe>
+
+### Stage 2训练代码
+运行命令： https://github.com/salesforce/LAVIS/blob/main/run_scripts/blip2/train/pretrain_stage2.sh
+
+### 配置文件pretrain_stage2.yaml
+
+https://github.com/salesforce/LAVIS/blob/ac8fc98c93c02e2dfb727e24a361c4c309c8dbbc/lavis/projects/blip2/train/pretrain_stage2.yaml
+
+```yml
+model:
+  arch: blip2_opt
+  model_type: pretrain_opt2.7b 
+  load_pretrained: True
+  # intialize stage 2 pretraining from stage 1 pretrained model
+  pretrained: "https://storage.googleapis.com/sfr-vision-language-research/LAVIS/models/BLIP2/blip2_pretrained.pth"
+  freeze_vit: True
+```
+
+模型是blip2_opt
+
+### Blip2OPT
+https://github.com/salesforce/LAVIS/blob/ac8fc98c93c02e2dfb727e24a361c4c309c8dbbc/lavis/models/blip2_models/blip2_opt.py#L21 
+
+这个类包含qFormer和OPT，forward时计算语言模型损失。
+
+
+
+
 
 
 
