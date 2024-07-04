@@ -1,64 +1,39 @@
 # BLIP-2 Explained 
 
-## TODO
-- [ ] 全方位精读论文
-- [ ] 全方位精度代码
-- [ ] BLIP2代码设计 
-- [ ] 每个损失对应的attention mask 
+## BLIP-2概述
 
+BLIP代表Bootstrapping Language-Image Pre-training。在这里，“bootstrap”一词可以理解为“自举”或“引导”的意思。它表示通过某种方法逐步建立或提升系统的能力，而无需从零开始完全重新训练。具体来说，在BLIP-2的框架中，bootstrap的作用是利用已有的预训练模型（如预训练的图像编码器和大型语言模型）来逐步学习和提升视觉-语言表示和生成能力，而不需要从头开始训练整个模型。原文标题很恰如其分，BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models。
 
-![](../images/blip2.png)
+BLIP-2训练分为两个阶段：
+- 第一阶段：使用冻结的图像编码器来引导视觉-语言表示学习。在这个阶段中，图像编码器的参数是固定的，不会更新，模型通过学习如何利用这些固定的图像表示来进行视觉-语言任务。
+- 第二阶段：使用冻结的语言模型来引导视觉到语言的生成学习。在这个阶段，语言模型的参数也是固定的，模型通过学习如何将视觉信息转换为语言表示，并生成符合自然语言指令的文本。
 
-在这个上下文中，“bootstrap”一词可以理解为“自举”或“引导”的意思。它表示通过某种方法逐步建立或提升系统的能力，而无需从零开始完全重新训练。具体来说，在BLIP-2的框架中，bootstrap的作用是利用已有的预训练模型（如预训练的图像编码器和大型语言模型）来逐步学习和提升视觉-语言表示和生成能力，而不需要从头开始训练整个模型。
+<img src="../images/blip2.png" style="zoom:70%;" />
 
-BLIP-2的自举过程分为两个阶段：
-
-第一阶段：使用冻结的图像编码器来引导（bootstrap）视觉-语言表示学习。这意味着在这个阶段中，图像编码器的参数是固定的，不会更新，模型通过学习如何利用这些固定的图像表示来进行视觉-语言任务。
-
-第二阶段：使用冻结的语言模型来引导视觉到语言的生成学习。在这个阶段，语言模型的参数也是固定的，模型通过学习如何将视觉信息转换为语言表示，并生成符合自然语言指令的文本。
-
-通过这种自举策略，BLIP-2能够有效地利用现有的预训练模型，减少了需要训练的参数量，同时也能在各种视觉-语言任务中取得优异的性能。这种方法不仅提高了训练效率，还显著降低了训练成本。
-
-
-
- Q-Former is a lightweight trans- former which employs a set of learnable query vectors to extract visual features from the frozen image encoder. It acts as an information bottleneck between the frozen image encoder and the frozen LLM.In the first pre-training stage, we perform vision-language rep- resentation learning which enforces the Q-Former to learn visual representation most relevant to the text. In the second pre-training stage, we perform vision-to-language genera- tive learning by connecting the output of the Q-Former to a frozen LLM, and trains the Q-Former such that its output visual representation can be interpreted by the LLM.
-
- We name our VLP framework as BLIP-2: Bootstrapping Language-Image Pre-training with frozen unimodal models
-
- We propose Q-Former as the trainable module to bridge the gap between a frozen image encoder and a frozen LLM. It extracts a fixed number of output features from the image encoder, independent of input image resolution. 
-
-As shown in Figure 2, Q-Former consists of two transformer submod- ules that share the same self-attention layers: (1) an image transformer that interacts with the frozen image encoder for visual feature extraction, (2) a text transformer that can function as both a text encoder and a text decoder. We create a set number of learnable query embeddings as input to the image transformer. The queries interact with each other through self-attention layers, and interact with frozen image features through cross-attention layers (inserted every other transformer block). The queries can additionally interact with the text through the same self-attention layers. Depend- ing on the pre-training task, we apply different self-attention masks to control query-text interaction. We initialize Q- Former with the pre-trained weights of BERTbase (Devlin et al., 2019), whereas the cross-attention layers are randomly initialized. In total, Q-Former contains 188M parameters. Note that the queries are considered as model parameters.
-In our experiments, we use 32 queries where each query has a dimension of 768 (same as the hidden dimension of the Q-Former). We use Z to denote the output query representation. The size of Z (32 × 768) is much smaller than the size of frozen image features (e.g. 257 × 1024 for ViT-L/14). This bottleneck architecture works together with our pre-training objectives into forcing the queries to extract visual information that is most relevant to the text.
-
-![](../images/blip2-1.png)
-
-在上文中，“The queries interact with each other through self-attention layers, and interact with frozen image features through cross-attention layers (inserted every other transformer block).”这一句话描述了Q-Former模块中查询嵌入（query embeddings）在处理中的交互方式。
-
-Queries通过自注意力层相互交互：
-
-查询嵌入（queries）：这些是Q-Former中用于从图像编码器提取信息的可学习嵌入。
-自注意力层（self-attention layers）：这是Transformer架构中的一种机制，允许每个查询嵌入在同一层内与其他查询嵌入进行交互。这意味着每个查询嵌入可以“看到”其他查询嵌入的信息，并根据这些信息进行调整和更新。这种交互方式使得模型能够捕捉查询之间的关系和依赖性，从而更好地理解和处理输入图像的信息。
-Queries通过交叉注意力层与冻结的图像特征交互：
-
-冻结的图像特征（frozen image features）：这些是从一个预训练并冻结的图像编码器（即参数固定，不再更新）中提取的特征表示。
-交叉注意力层（cross-attention layers）：这是在Transformer架构中用于连接不同模态（如图像和文本）的机制。在这里，查询嵌入通过交叉注意力层与从图像编码器提取的图像特征进行交互。这意味着每个查询嵌入可以“看到”图像中的特定特征，并将这些特征整合到自身的表示中。
+BLIP-2的核心组件是Q-Former，它是一个transformer，用于从图片编码器中提取视觉特征，是图片编码器和LLM之间的桥梁。在第一阶段，Q-Former会学习到和文本最相关的视觉特征。在第二阶段，Q-Former的输出和固定参数的LLM连接起来，使得Q-Former的输出能被LLM理解。
 
 ## Stage 1解释
 
 Stage 1: Bootstrap Vision-Language Representation Learning from a Frozen Image Encoder
 
+Stage 1是多任务学习，对应三个损失函数。原文的示意图把三个任务混在一起了，所以不是很好理解，把他们拆开看，就好理解了。
+
+![](../images/blip2-1.png)
+
 ### Image-Text Contrastive Learning
 图文对比学习，顾名思义，在一个batch中，某图片和它的配文尽可能相似，和其他配文尽可能相远。
 
 论文原文的配图把所有步骤都赛进一张图，看着容易引起困惑。分开画图就好理解了，图文对比学习的示意图如下：
-![](../images/blip2-2.png)
+<img src="../images/blip2-2.png" style="zoom: 33%;" />
+
+<p style="text-align:center;">插图来源：https://www.youtube.com/watch?v=k0DAtZCCl1w</p>
 
 Learned queries经过self-attention得到query tokens，图片经过image encoder得到visual tokens，visutal tokens和query tokens经过cross attention，得到query output，再经过FFN，得到image features。image features是一个列表的向量，记为$Z$。文本经过self attention和FFN，取`[CLS]`的向量，记为$t$。
 
 图文相似度的计算方式：$Z$中的每个向量和$t$计算相似度，取最大的那个。
 
 所谓unimodal self-attention mask，就是图片和文本分别计算self-attention。
-![](../images/blip2-3.png)
+<img src="../images/blip2-3.png" style="zoom:50%;" />
 
 这个示意图按行看，阴影是mask，Q是图片的表示，T是文本的表示，图片只能注意图片，文本只能注意文本。
 
@@ -86,6 +61,9 @@ https://github.com/salesforce/LAVIS/blob/main/lavis/models/blip2_models/Qformer.
 BertEncoder将多个block层归拢到一起，`forward`时，会灵活根据输入参数，选择是否执行cross attention。
 
 ### Image-grounded Text Generation
+
+<img src="../images/blip2-8.png" style="zoom: 25%;" />
+
 在这个任务中，self attention既是编码器，也是解码器。
 
 attention的视野范围是全部query output(cross attention的输出)，以及已经解码过的token，这就是所谓的multimodal causal self-attention mask。第一个解码token是`[DEC]`。
@@ -95,30 +73,34 @@ attention的视野范围是全部query output(cross attention的输出)，以及
 `self.Qformer`是`BertLMHeadModel`对象，定义在 https://github.com/salesforce/LAVIS/blob/main/lavis/models/blip2_models/Qformer.py#L968。其中的`past_key_values`参数就是query output（和已经解码过的token），是self attention解码时的key和value。
 
 这个任务的优化目标是语言建模，损失记为`loss_lm`。
-![](../images/blip2-4.png)
+<img src="../images/blip2-4.png" style="zoom:50%;" />
 
 这个示意图按行看，阴影是mask，Q是图片的表示，T是文本的表示，图片可以注意所有图片，文本可以注意所有图片和已经解码过的文本。
 
 ### Image-Text Matching
+
+<img src="../images/blip2-9.png" style="zoom: 25%;" />
+
 明白前两个任务之后，理解第三个任务就比较简单了。
 
 在这个任务中，所有的图片特征和文本特征都可以互相注意，这就是所谓的 bi-directional self-attention mask。
 
-![](../images/blip2-5.png)
+<img src="../images/blip2-5.png" style="zoom: 25%;" />
 
 代码在 https://github.com/salesforce/LAVIS/blob/main/lavis/models/blip2_models/blip2_qformer.py#L175 。
 
 代码有很多细微之处，下面是详细解释。
 
 1. **数据准备和收集**：
+    
     ```python
     text_input_ids_world = concat_all_gather(text_tokens.input_ids)
     text_attention_mask_world = concat_all_gather(text_tokens.attention_mask)
     image_embeds_world = all_gather_with_grad(image_embeds)
     ```
-
+    
     - `concat_all_gather` 和 `all_gather_with_grad` 用于收集不同设备上的数据，形成全局视角。这里分别收集了文本的 `input_ids`、`attention_mask` 和图像的嵌入。
-
+    
 2. **计算相似度矩阵并掩码**：
     ```python
     with torch.no_grad():
@@ -207,8 +189,36 @@ attention的视野范围是全部query output(cross attention的输出)，以及
 
 第一阶段的训练，最终的损失是三个任务的损失之和，代码在 https://github.com/salesforce/LAVIS/blob/main/lavis/models/blip2_models/blip2_qformer.py#L271 。
 
+### 回顾
+
 现在在看原论文中的示意图，就好理解了。
 ![](../images/blip2-6.png)
+
+再理解几个原文中的句子：
+
+> 原文：Q-Former consists of two transformer submodules that share the same self-attention layers: (1) an image transformer that interacts with the frozen image encoder for visual feature extraction, (2) a text transformer that can function as both a text encoder and a text decoder. 
+
+解释：这个说法有点误导。在实现上，其实只有一个transformer(更具体的，初始化为bert-base-uncased)，这个transformer有时候输入是文本，有时候输入是图片向量+learned queries。有时候只用self attention，有时候也用cross attention。
+
+
+
+> 原文：We create a set number of learnable query embeddings as input to the image transformer. The queries interact with each other through self-attention layers, and interact with frozen image features through cross-attention layers (inserted every other transformer block). 
+
+解释：Q-Former有N个block层，每个block层有一个self attention层和一个cross attention层。提取图片特征时，在每个block层，先用self attention计算queies的隐状态，再结合cross attention计算视觉特征。这就是所谓的inserted every other transformer block。
+
+
+
+> 原文：The queries can additionally interact with the text through the same self-attention layers.
+
+解释：因为他们共用一个self attention，所以就间接交互了。
+
+
+
+> 原文： Depending on the pre-training task, we apply different self-attention masks to control query-text interaction. We initialize Q-Former with the pre-trained weights of BERTbase (Devlin et al., 2019), whereas the cross-attention layers are randomly initialized. In total, Q-Former contains 188M parameters. Note that the queries are considered as model parameters.
+
+解释：we apply different self-attention masks to control query-text interaction这句话是重中之重，是理解Q-Former实现的关键。
+
+
 
 ## Stage 2解释
 
@@ -225,12 +235,7 @@ OPT的代码在 https://github.com/salesforce/LAVIS/blob/main/lavis/models/blip2
 
 
 
-
-*参考资料*
-- BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models
-- https://www.youtube.com/watch?v=k0DAtZCCl1w
-
-## 附录
+## 代码详细解释
 ### Qformer代码
 #### BertSelfAttention
 代码位置: https://github.com/salesforce/LAVIS/blob/main/lavis/models/blip2_models/Qformer.py#L111
@@ -366,7 +371,7 @@ _save_checkpoint解释：
 ### Stage 2训练代码
 运行命令： https://github.com/salesforce/LAVIS/blob/main/run_scripts/blip2/train/pretrain_stage2.sh
 
-### 配置文件pretrain_stage2.yaml
+#### 配置文件pretrain_stage2.yaml
 
 https://github.com/salesforce/LAVIS/blob/ac8fc98c93c02e2dfb727e24a361c4c309c8dbbc/lavis/projects/blip2/train/pretrain_stage2.yaml
 
@@ -382,7 +387,8 @@ model:
 
 模型是blip2_opt
 
-### Blip2OPT
+#### Blip2OPT
+
 https://github.com/salesforce/LAVIS/blob/ac8fc98c93c02e2dfb727e24a361c4c309c8dbbc/lavis/models/blip2_models/blip2_opt.py#L21 
 
 这个类包含qFormer和OPT，forward时计算语言模型损失。
