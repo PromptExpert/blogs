@@ -3,11 +3,7 @@
 ## TODO
 - [ ] 全方位精读论文
 - [ ] 全方位精度代码
-- [ ] bottom up精读代码
-- [ ] bert预训练参数在哪里加载
-- [ ] bert config在哪里配置，都有什么
 - [ ] BLIP2代码设计 
-- [ ] self attention的参数是如何共享的
 - [ ] 每个损失对应的attention mask 
 
 
@@ -335,9 +331,33 @@ https://github.com/salesforce/LAVIS/blob/main/lavis/models/blip2_models/Qformer.
 运行命令： https://github.com/salesforce/LAVIS/blob/main/run_scripts/blip2/train/pretrain_stage1.sh
 
 #### pretrain_stage1.yaml
-配置文件入口。
+https://github.com/salesforce/LAVIS/blob/ac8fc98c93c02e2dfb727e24a361c4c309c8dbbc/lavis/projects/blip2/train/pretrain_stage1.yaml
+
+全部训练配置都在这里设置。
+
 <iframe src="notes/pretrain_stage1.html" width="100%" height="600px"></iframe>
+
+#### Blip2Qformer
+https://github.com/salesforce/LAVIS/blob/ac8fc98c93c02e2dfb727e24a361c4c309c8dbbc/lavis/models/blip2_models/blip2_qformer.py#L25
+
+这是训练stage1的核心，数据进入Blip2Qformer类，输出损失。
+
+三个损失函数前面已经分析过。
 
 #### ImageTextPretrainTask 和 BaseTask
 训练代码在这里定义。
+
+https://github.com/salesforce/LAVIS/blob/ac8fc98c93c02e2dfb727e24a361c4c309c8dbbc/lavis/tasks/base_task.py
+
+#### RunnerBase
+前面是定义模型、数据、任务，在这里开始训练。
+
+https://github.com/salesforce/LAVIS/blob/main/lavis/runners/runner_base.py
+
+train方法执行训练循环。train_epoch方法训练一个epoch，它再调用task类的train_epoch方法，进行实际的训练一轮。
+
+_save_checkpoint解释：
+<iframe src="notes/save_checkpoint.html" width="100%" height="600px"></iframe>
+
+
 
