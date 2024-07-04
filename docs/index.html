@@ -30,6 +30,7 @@
   </script>
   <script>
     window.$docsify = {
+      subMaxLevel: 3,
       name: '',
       // repo: 'https://github.com/PromptExpert/',
       loadSidebar: true,
@@ -49,6 +50,12 @@
             if (window.MathJax) {
               MathJax.typesetPromise();
             }
+          });
+        },
+        function (hook, vm) {
+          hook.beforeEach(function (content) {
+            var toc = '<div class="toc-container">' + window.Docsify.utils.genToc(content) + '</div>';
+            return toc + content;
           });
         }
       ]

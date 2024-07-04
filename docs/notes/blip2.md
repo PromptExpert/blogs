@@ -43,7 +43,9 @@ Queries通过交叉注意力层与冻结的图像特征交互：
 冻结的图像特征（frozen image features）：这些是从一个预训练并冻结的图像编码器（即参数固定，不再更新）中提取的特征表示。
 交叉注意力层（cross-attention layers）：这是在Transformer架构中用于连接不同模态（如图像和文本）的机制。在这里，查询嵌入通过交叉注意力层与从图像编码器提取的图像特征进行交互。这意味着每个查询嵌入可以“看到”图像中的特定特征，并将这些特征整合到自身的表示中。
 
-## Stage 1: Bootstrap Vision-Language Representation Learning from a Frozen Image Encoder
+## Stage 1解释
+
+Stage 1: Bootstrap Vision-Language Representation Learning from a Frozen Image Encoder
 
 ### Image-Text Contrastive Learning
 图文对比学习，顾名思义，在一个batch中，某图片和它的配文尽可能相似，和其他配文尽可能相远。
@@ -208,7 +210,9 @@ attention的视野范围是全部query output(cross attention的输出)，以及
 现在在看原论文中的示意图，就好理解了。
 ![](../images/blip2-6.png)
 
-## Stage 2: Bootstrap Vision-to-Language Generative Learning from a Frozen LLM
+## Stage 2解释
+
+Stage 2: Bootstrap Vision-to-Language Generative Learning from a Frozen LLM
 
 这个阶段就比较简单了，没什么可说的。
 ![](../images/blip2-7.png)
