@@ -16,31 +16,27 @@ BLIP-2的核心组件是Q-Former，它是一个transformer，用于从图片编�
 
 Stage 1: Bootstrap Vision-Language Representation Learning from a Frozen Image Encoder
 
-Stage 1是多任务学习，对应三个损失函数。原文的示意图把三个任务混在一起了，所以不是很好理解，把他们拆开看，就好理解了。
+Stage 1是多任务学习，对应三个损失函数。原文的示意图把三个任务混在一起了，所以不是很好理解，把他们拆开更容易理解。
 
 ![](../images/blip2-1.png)
 
 ### Image-Text Contrastive Learning
-图文对比学习，顾名思义，在一个batch中，某图片和它的配文尽可能相似，和其他配文尽可能相远。
-
-论文原文的配图把所有步骤都赛进一张图，看着容易引起困惑。分开画图就好理解了，图文对比学习的示意图如下：
+图文对比学习，让同一个图文对的视觉特征和文本特征尽可能相似。
 <img src="../images/blip2-2.png" style="zoom: 33%;" />
 
 <p style="text-align:center;">插图来源：https://www.youtube.com/watch?v=k0DAtZCCl1w</p>
 
-Learned queries经过self-attention得到query tokens，图片经过image encoder得到visual tokens，visutal tokens和query tokens经过cross attention，得到query output，再经过FFN，得到image features。image features是一个列表的向量，记为$Z$。文本经过self attention和FFN，取`[CLS]`的向量，记为$t$。
+Learned queries经过self-attention得到query隐状态，图片经过image encoder得到图片向量，图片向量和query隐状态经过cross attention，得到query output，再经过FFN，得到最终的图片特征。图片特征是一个列表的向量，记为$Z$。
+
+文本经过self attention和FFN，取`[CLS]`的向量，记为$t$。
 
 图文相似度的计算方式：$Z$中的每个向量和$t$计算相似度，取最大的那个。
 
 所谓unimodal self-attention mask，就是图片和文本分别计算self-attention。
+
 <img src="../images/blip2-3.png" style="zoom:50%;" />
 
 这个示意图按行看，阴影是mask，Q是图片的表示，T是文本的表示，图片只能注意图片，文本只能注意文本。
-
-解释一下原文的这段话：
-> The queries interact with each other through self-attention layers, and interact with frozen image features through cross-attention layers (inserted every other transformer block). 
-
-Q-Former里的可能有很多个Block层， 每个block层都由self attention, cross attention和FFN组成。self attention只计算queries, cross attention的输入包含visual tokens和query tokens。这种安排可以在保留queries自我交互的同时，定期引入图像特征信息，平衡两者之间的信息流。
 
 下面看下这部分的代码。
 
@@ -204,7 +200,7 @@ attention的视野范围是全部query output(cross attention的输出)，以及
 
 > 原文：We create a set number of learnable query embeddings as input to the image transformer. The queries interact with each other through self-attention layers, and interact with frozen image features through cross-attention layers (inserted every other transformer block). 
 
-解释：Q-Former有N个block层，每个block层有一个self attention层和一个cross attention层。提取图片特征时，在每个block层，先用self attention计算queies的隐状态，再结合cross attention计算视觉特征。这就是所谓的inserted every other transformer block。
+解释：Q-Former有N个block层，每个block层有一个self attention层和一个cross attention层。提取图片特征时，在每个block层，先用self attention计算queies的隐状态，再结合cross attention计算视觉特征。这就是所谓的inserted every other transformer block。这种安排可以在保留queries自我交互的同时，定期引入图像特征信息，平衡两者之间的信息流。
 
 
 
