@@ -3,4 +3,5 @@
 - [多模态](mllm.md)
 - [Miscellaneous](miscellaneous.md)
 - [笔记](notes.md)
+- [阅读](reading.md)
 - [关于我](about.md)
