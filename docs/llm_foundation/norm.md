@@ -32,11 +32,11 @@ $$
 
 **Sandwich-LN**  层之前和之后都加LN。
 
-![截屏2023-08-30 13.20.03.png](images/norm.png)
+![截屏2023-08-30 13.20.03.png](../images/norm.png)
 
 ## DeepNorm
 
-![截屏2023-08-30 13.24.06.png](images/deepnorm.png)
+![截屏2023-08-30 13.24.06.png](../images/deepnorm.png)
 
 DeepNorm形式上很简单，同时具有稳定和表现好的优点，可以将Transformer扩展到1000层。GLM-130B用了DeepNorm。
 
