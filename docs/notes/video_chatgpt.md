@@ -1,6 +1,6 @@
 # Video-ChatGPT结构
 
-![arch](images/video-chatgpt.png)
+![arch](../images/video-chatgpt.png)
 
 Visual encoder用的是CLIP ViT-L/14。
 给定一个视频 $V_i \in \mathbb{R}^{T \times H \times W \times C}$ ，其中，$T$ 是帧数，$H$ 是高度， $W$是宽度，$C$ 是channel数量。
