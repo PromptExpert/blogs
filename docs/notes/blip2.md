@@ -42,25 +42,30 @@ Learned queries经过self-attention得到query隐状态，图片经过image enco
 
 代码解释：
 
-<iframe src="notes/stage1_forward_prepare.html" width="100%" height="600px"></iframe>
+<iframe src="notes/image_text_contrastive_learning.html" width="100%" height="600px"></iframe>
 
 
 ### Image-grounded Text Generation
 
 <img src="../images/blip2-8.png" style="zoom: 25%;" />
 
-在这个任务中，self attention既是编码器，也是解码器。
+这个任务是为了让Q-Former具备给图片生成配文的能力，self attention既是编码器，也是解码器。
 
-attention的视野范围是全部query output(cross attention的输出)，以及已经解码过的token，这就是所谓的multimodal causal self-attention mask。第一个解码token是`[DEC]`。
+self attention的视野范围是全部query output(cross attention的输出)，以及已经解码过的token，这就是所谓的multimodal causal self-attention mask。第一个解码token是`[DEC]`。
 
+<img src="../images/blip2-4.png" style="zoom:50%;" />
+
+这个示意图按行看，阴影是mask，Q是图片的表示，T是文本的表示，图片可以注意所有图片，文本可以注意所有图片和已经解码过的文本。
+
+代码解释：
 代码在 https://github.com/salesforce/LAVIS/blob/main/lavis/models/blip2_models/blip2_qformer.py#L249。
 
 `self.Qformer`是`BertLMHeadModel`对象，定义在 https://github.com/salesforce/LAVIS/blob/main/lavis/models/blip2_models/Qformer.py#L968。其中的`past_key_values`参数就是query output（和已经解码过的token），是self attention解码时的key和value。
 
 这个任务的优化目标是语言建模，损失记为`loss_lm`。
-<img src="../images/blip2-4.png" style="zoom:50%;" />
 
-这个示意图按行看，阴影是mask，Q是图片的表示，T是文本的表示，图片可以注意所有图片，文本可以注意所有图片和已经解码过的文本。
+
+
 
 ### Image-Text Matching
 
