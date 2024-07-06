@@ -21,7 +21,9 @@ Stage 1是多任务学习，对应三个损失函数。原文的示意图把三�
 ![](../images/blip2-1.png)
 
 ### Image-Text Contrastive Learning
+
 图文对比学习，让同一个图文对的视觉特征和文本特征尽可能相似。
+
 <img src="../images/blip2-2.png" style="zoom: 33%;" />
 
 <p style="text-align:center;">插图来源：https://www.youtube.com/watch?v=k0DAtZCCl1w</p>
@@ -38,23 +40,10 @@ Learned queries经过self-attention得到query隐状态，图片经过image enco
 
 这个示意图按行看，阴影是mask，Q是图片的表示，T是文本的表示，图片只能注意图片，文本只能注意文本。
 
-下面看下这部分的代码。
+代码解释：
 
-https://github.com/salesforce/LAVIS/blob/main/lavis/models/blip2_models/blip2_qformer.py#L129 
+<iframe src="notes/stage1_forward_prepare.html" width="100%" height="600px"></iframe>
 
-在这块代码里，前面先进行了一些准备工作，计算image embedding，query self attention, query image cross attention, text self attention。
-
-准备工作之后，优化目标是图片和它的配文的相似度尽可能大，计算batch之内的损失，记为loss_itc。
-
-还有一个问题没有展开，就是计算self attention和cross attention的代码。
-
-https://github.com/salesforce/LAVIS/blob/main/lavis/models/blip2_models/Qformer.py#L378 
-
-`BertLayer`类定义了self attention和cross attention的参数，通过`config.add_cross_attention`配置选择是否需要cross attention。
-
-https://github.com/salesforce/LAVIS/blob/main/lavis/models/blip2_models/Qformer.py#L487 
-
-BertEncoder将多个block层归拢到一起，`forward`时，会灵活根据输入参数，选择是否执行cross attention。
 
 ### Image-grounded Text Generation
 
@@ -88,7 +77,7 @@ attention的视野范围是全部query output(cross attention的输出)，以及
 代码有很多细微之处，下面是详细解释。
 
 1. **数据准备和收集**：
-    
+   
     ```python
     text_input_ids_world = concat_all_gather(text_tokens.input_ids)
     text_attention_mask_world = concat_all_gather(text_tokens.attention_mask)
@@ -326,7 +315,7 @@ https://github.com/salesforce/LAVIS/blob/main/lavis/models/blip2_models/Qformer.
 #### BertLMHeadModel
 https://github.com/salesforce/LAVIS/blob/main/lavis/models/blip2_models/Qformer.py#L968
 
-这是qFormer的核心组件。
+这是qFormer的核心组件。blip.Qformer变量就是BertLMHeadModel对象。
 
 这个类执行语言建模。LM代表语言模型，Head表示这个类实现了一个特定的头部。头部通常指代模型的最后一层或几层，它们负责将模型的编码器输出转换为特定的任务输出。对于语言模型，头部通常包括一个线性层和一个softmax层，用于预测词汇表中的下一个词。`self.cls = BertOnlyMLMHead(config)`做的就是预测下一个词。
 
