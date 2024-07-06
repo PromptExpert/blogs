@@ -1,6 +1,6 @@
 - [首页](README.md)
 - [大语言模型基础](llm_foundation.md)
-- [大语言模型进阶](llm_advanced.md)
 - [多模态](mllm.md)
+- [Miscellaneous](miscellaneous.md)
 - [笔记](notes.md)
 - [关于我](about.md)

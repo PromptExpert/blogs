@@ -1,3 +1,3 @@
 # 目录
 
-* [多模态综述](mllm_surveys.md)
+* [多模态综述](mllm/mllm_surveys.md)
