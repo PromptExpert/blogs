@@ -118,7 +118,7 @@ Stage 2: Bootstrap Vision-to-Language Generative Learning from a Frozen LLM
 这个阶段就比较简单了，没什么可说的。
 ![](../images/blip2-7.png)
 
-OPT的代码在 https://github.com/salesforce/LAVIS/blob/main/lavis/models/blip2_models/blip2_opt.py#L107。
+以OPT为例，代码在 https://github.com/salesforce/LAVIS/blob/main/lavis/models/blip2_models/blip2_opt.py#L107。
 
 
 
