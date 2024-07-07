@@ -16,7 +16,7 @@ BLIP-2的核心组件是Q-Former，它是一个transformer，用于从图片编�
 
 Stage 1: Bootstrap Vision-Language Representation Learning from a Frozen Image Encoder
 
-Stage 1是多任务学习，对应三个损失函数。原文的示意图把三个任务混在一起了，所以不是很好理解，把他们拆开更容易理解。
+Stage 1是多任务学习，对应三个损失函数，总损失是三个任务的损失之和。。原文的示意图把三个任务混在一起了，所以不是很好理解，把他们拆开更容易理解。
 
 ![](../images/blip2-1.png)
 
@@ -68,111 +68,15 @@ self attention的视野范围是全部query output(cross attention的输出)，�
 
 明白前两个任务之后，理解第三个任务就比较简单了。
 
+图文匹配是一个二分类任务，对于一个图文对，判定是否匹配。
+
 在这个任务中，所有的图片特征和文本特征都可以互相注意，这就是所谓的 bi-directional self-attention mask。
 
 <img src="../images/blip2-5.png" style="zoom: 25%;" />
 
-代码在 https://github.com/salesforce/LAVIS/blob/main/lavis/models/blip2_models/blip2_qformer.py#L175 。
+代码解释：
 
-代码有很多细微之处，下面是详细解释。
-
-1. **数据准备和收集**：
-   
-    ```python
-    text_input_ids_world = concat_all_gather(text_tokens.input_ids)
-    text_attention_mask_world = concat_all_gather(text_tokens.attention_mask)
-    image_embeds_world = all_gather_with_grad(image_embeds)
-    ```
-    
-    - `concat_all_gather` 和 `all_gather_with_grad` 用于收集不同设备上的数据，形成全局视角。这里分别收集了文本的 `input_ids`、`attention_mask` 和图像的嵌入。
-    
-2. **计算相似度矩阵并掩码**：
-    ```python
-    with torch.no_grad():
-        if "image_id" in samples.keys():
-            mask = torch.eq(image_ids, image_ids_all.t())
-            sim_t2i.masked_fill_(mask, -10000)
-            sim_i2t.masked_fill_(mask, -10000)
-        else:
-            sim_t2i[:, rank * bs : rank * bs + bs].fill_diagonal_(-10000)
-            sim_i2t[:, rank * bs : rank * bs + bs].fill_diagonal_(-10000)
-    
-        weights_t2i = F.softmax(sim_t2i, dim=1)
-        weights_i2t = F.softmax(sim_i2t, dim=1)
-    ```
-
-    - 这里计算了文本到图像（text-to-image, sim_t2i）和图像到文本（image-to-text, sim_i2t）的相似度矩阵，并对相同ID的对进行掩码处理，以防止模型在负采样时选择相同的对。
-    - 随后对相似度矩阵应用 softmax，以获得每个文本对应不同图像的权重分布 `weights_t2i`，以及每个图像对应不同文本的权重分布 `weights_i2t`。
-
-3. **选择负样本**：
-    ```python
-    image_embeds_neg = []
-    for b in range(bs):
-        neg_idx = torch.multinomial(weights_t2i[b], 1).item()
-        image_embeds_neg.append(image_embeds_world[neg_idx])
-    image_embeds_neg = torch.stack(image_embeds_neg, dim=0)
-    
-    text_ids_neg = []
-    text_atts_neg = []
-    for b in range(bs):
-        neg_idx = torch.multinomial(weights_i2t[b], 1).item()
-        text_ids_neg.append(text_input_ids_world[neg_idx])
-        text_atts_neg.append(text_attention_mask_world[neg_idx])
-    
-    text_ids_neg = torch.stack(text_ids_neg, dim=0)
-    text_atts_neg = torch.stack(text_atts_neg, dim=0)
-    ```
-    - 这部分代码根据权重分布 `weights_t2i` 和 `weights_i2t` 为每个正样本选择一个负样本。具体做法是通过 `torch.multinomial` 从权重分布中采样负样本的索引，然后将这些负样本的嵌入（图像和文本）收集起来。
-    - 通过 torch.multinomial 函数从这个分布中采样，可以有效地选择那些与当前文本（或图像）具有高相似度但实际并不匹配的负样本。这样就实现了hard negative mining，即选择那些难以区分的负样本来训练模型。
-
-4. **准备输入数据**：
-    ```python
-    text_ids_all = torch.cat([text_tokens.input_ids, text_tokens.input_ids, text_ids_neg], dim=0)
-    text_atts_all = torch.cat([text_tokens.attention_mask, text_tokens.attention_mask, text_atts_neg], dim=0)
-    
-    query_tokens_itm = self.query_tokens.expand(text_ids_all.shape[0], -1, -1)
-    query_atts_itm = torch.ones(query_tokens_itm.size()[:-1], dtype=torch.long).to(image.device)
-    attention_mask_all = torch.cat([query_atts_itm, text_atts_all], dim=1)
-    
-    image_embeds_all = torch.cat([image_embeds, image_embeds_neg, image_embeds], dim=0)
-    image_atts_all = torch.ones(image_embeds_all.size()[:-1], dtype=torch.long).to(image.device)
-    ```
-
-    - 将正样本和负样本的文本和图像拼接在一起，形成模型的输入。`text_ids_all` 和 `text_atts_all` 分别包含了正样本文本、正样本文本和负样本文本的 `input_ids` 和 `attention_mask`。
-    - `query_tokens_itm` 是用于ITM任务的查询标记，它们与文本和图像的嵌入一起输入模型。`attention_mask_all` 是拼接后的注意力掩码。
-    - `image_embeds_all` 是包含正样本图像、负样本图像和正样本图像的嵌入。`image_atts_all` 是对应的注意力掩码。
-
-5. **模型前向传播**：
-    ```python
-    output_itm = self.Qformer.bert(
-        text_ids_all,
-        query_embeds=query_tokens_itm,
-        attention_mask=attention_mask_all,
-        encoder_hidden_states=image_embeds_all,
-        encoder_attention_mask=image_atts_all,
-        return_dict=True,
-    )
-    ```
-
-
-6. **计算匹配分数和损失**：
-    ```python
-    vl_embeddings = output_itm.last_hidden_state[:, : query_tokens_itm.size(1), :]
-    vl_output = self.itm_head(vl_embeddings)
-    logits = vl_output.mean(dim=1)
-    
-    itm_labels = torch.cat([torch.ones(bs, dtype=torch.long), torch.zeros(2 * bs, dtype=torch.long)], dim=0).to(image.device)
-    loss_itm = F.cross_entropy(logits, itm_labels)
-    ```
-
-    - 提取出最后一层隐藏状态的查询嵌入，并通过线性分类器 `itm_head` 计算每个查询嵌入的logits。
-    - 对所有查询嵌入的logits求平均，作为输出的匹配分数。
-    - 制作标签 `itm_labels`，正样本为1，负样本为0。计算交叉熵损失 `loss_itm`。
-    ```
-
-最后得到损失，记为loss_itm。
-
-第一阶段的训练，最终的损失是三个任务的损失之和，代码在 https://github.com/salesforce/LAVIS/blob/main/lavis/models/blip2_models/blip2_qformer.py#L271 。
+<iframe src="notes/image_text_matching.html" width="100%" height="600px"></iframe>
 
 ### 回顾
 
@@ -202,6 +106,8 @@ self attention的视野范围是全部query output(cross attention的输出)，�
 > 原文： Depending on the pre-training task, we apply different self-attention masks to control query-text interaction. We initialize Q-Former with the pre-trained weights of BERTbase (Devlin et al., 2019), whereas the cross-attention layers are randomly initialized. In total, Q-Former contains 188M parameters. Note that the queries are considered as model parameters.
 
 解释：we apply different self-attention masks to control query-text interaction这句话是重中之重，是理解Q-Former实现的关键。
+
+
 
 
 
