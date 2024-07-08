@@ -20,7 +20,7 @@ Stage 1是多任务学习，对应三个损失函数，总损失是三个任务�
 
 ![](../images/blip2-1.png)
 
-### Image-Text Contrastive Learning
+### 图文对比学习
 
 图文对比学习，让同一个图文对的视觉特征和文本特征尽可能相似。
 
@@ -45,7 +45,7 @@ Learned queries经过self-attention得到query隐状态，图片经过image enco
 <iframe src="notes/image_text_contrastive_learning.html" width="100%" height="600px"></iframe>
 
 
-### Image-grounded Text Generation
+### 以图生文
 
 <img src="../images/blip2-8.png" style="zoom: 25%;" />
 
@@ -59,10 +59,10 @@ self attention的视野范围是全部query output(cross attention的输出)，�
 
 代码解释：
 
-<iframe src="notes/image_grounded_text_generation.html" width="100%" height="600px"></iframe>
+<iframe src="notes/image_grounded_text_generation.html" width="120%" height="600px"></iframe>
 
 
-### Image-Text Matching
+### 图文匹配
 
 <img src="../images/blip2-9.png" style="zoom: 25%;" />
 
@@ -119,11 +119,6 @@ Stage 2: Bootstrap Vision-to-Language Generative Learning from a Frozen LLM
 ![](../images/blip2-7.png)
 
 以OPT为例，代码在 https://github.com/salesforce/LAVIS/blob/main/lavis/models/blip2_models/blip2_opt.py#L107。
-
-
-
-
-
 
 
 ## 代码详细解释
@@ -283,6 +278,22 @@ model:
 https://github.com/salesforce/LAVIS/blob/ac8fc98c93c02e2dfb727e24a361c4c309c8dbbc/lavis/models/blip2_models/blip2_opt.py#L21 
 
 这个类包含qFormer和OPT，forward时计算语言模型损失。
+
+### Stage 1 三个任务的mask和前向计算
+
+正文简单大致介绍过各种attention mask, 这里从前向计算角度，再作一次细致的分析。
+
+#### 图文对比学习
+
+有三个对象：图片、queries和文本。
+
+queries的self attention是全注意力。
+图片和queries计算cross attention，没有mask。
+文本的self attention是全注意力。
+
+代码解释：
+<iframe src="notes/itc_forward.html" width="100%" height="600px"></iframe>
+
 
 
 
