@@ -1,4 +1,4 @@
-# BLIP-2 Explained 
+# BLIP-2 Explained：原理剖析与代码解读
 
 ## BLIP-2概述
 
