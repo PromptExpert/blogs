@@ -284,7 +284,6 @@ https://github.com/salesforce/LAVIS/blob/ac8fc98c93c02e2dfb727e24a361c4c309c8dbb
 正文简单大致介绍过各种attention mask, 这里从前向计算角度，再作一次细致的分析。
 
 #### 图文对比学习
-
 有三个对象：图片、queries和文本。
 
 queries的self attention是全注意力。
@@ -294,8 +293,14 @@ queries的self attention是全注意力。
 代码解释：
 <iframe src="notes/itc_forward.html" width="100%" height="600px"></iframe>
 
+#### 以图生文
+文本隐状态是q，kv是queries的kv+文本隐状态。mask是causal mask。
+计算self attention，预测词表，计算交叉熵。
 
+代码解释：
+<iframe src="notes/itg_forward.html" width="100%" height="600px"></iframe>
 
+#### 
 
 
 
