@@ -300,7 +300,10 @@ queries的self attention是全注意力。
 代码解释：
 <iframe src="notes/itg_forward.html" width="100%" height="600px"></iframe>
 
-#### 
+#### 图文匹配
+
+代码解释：
+<iframe src="notes/itm_forward.html" width="100%" height="600px"></iframe>
 
 
 
