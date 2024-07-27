@@ -24,6 +24,7 @@ $$
 \bar{a_i}=\frac{a_i}{\operatorname{RMS}(\mathbf{a})} g_i, \quad \text { where } \operatorname{RMS}(\mathbf{a})=\sqrt{\frac{1}{n} \sum_{i=1}^n a_i^2} .
 $$
 
+其中，$\mathbf{g} \in \mathbb{R}^n$ 是缩放系数，初始化为1。
 
 ## Norm的位置
 
