@@ -214,4 +214,14 @@ print (f'Parameters of output layer = {output_params/10**9:.2f}B')
 # Total
 total_params = embed_params + transformer_params + output_params
 print (f'Parameters total = {total_params//10**9:.2f}B')
+
+#Parameters of Embebdding layer = 0.53B
+#Parameters of RMSNorm layer = 0.00B
+#Parameters of Attention layer = 0.04B
+#FFN hidden_dim = 14643
+#Parameters of FFN layer = 0.18B
+#Parameters of Transformer block = 0.22B
+#Parameters of Transformer = 7.10B
+#Parameters of output layer = 0.53B
+#Parameters total = 8.00B
 ```
