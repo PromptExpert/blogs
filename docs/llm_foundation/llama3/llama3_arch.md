@@ -20,5 +20,8 @@ Llama 3 405B uses an architecture with 126 layers, a token representation dimens
 
 实现: https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/api/model.py
 
-
+*参考资料*
+- LLaMA- Open and Efficient Foundation Language Models
+- Llama 2- Open Foundation and Fine-Tuned Chat Models
+- The Llama 3 Herd of Models
 
