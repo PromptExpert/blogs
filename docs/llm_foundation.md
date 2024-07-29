@@ -5,3 +5,4 @@
 - [SwiGLU激活函数](llm_foundation/swiglu.md)
 - [大模型中的Attention](llm_foundation/llm_attention.md)
 - [Llama 3精读](llm_foundation/llama3/llama3.md)
+- [Scaling Laws](llm_foundation/scaliing_laws.md)
