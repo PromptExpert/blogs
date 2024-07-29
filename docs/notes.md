@@ -10,3 +10,5 @@
 - [EVA](notes/eva.md)
 - [数据集介绍](notes/datasets_intro.md)
 - [BLIP-2 Explained](notes/blip2.md)
+- [RoPE Explained](notes/rope.md)
+- [待研究](notes/questions.md)
