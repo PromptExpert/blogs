@@ -6,3 +6,4 @@
 - [大模型中的Attention](llm_foundation/llm_attention.md)
 - [Llama 3精读](llm_foundation/llama3/llama3.md)
 - [Scaling Laws](llm_foundation/scaliing_laws.md)
+- [FLOPs](llm_foundation/FLOPs.md)
