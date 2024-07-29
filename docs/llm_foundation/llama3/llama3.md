@@ -2,7 +2,7 @@
 
 - [Llama3的模型结构](llm_foundation/llama3/llama3_arch.md)
 - [Llams3的参数量计算](llm_foundation/llama3/llama3_params_count.md)
-- [Llama3如何实现128K的上下文长度](llama3_128k.md)
+- [Llama3如何实现128K的上下文长度](llm_foundation/llama3/llama3_128k.md)
 - [Llama3的预训练数据](todo.md)
 - [Llama3金句摘抄](llama3_quote.md)
 - [Llama3预训练数据](llama3_pre_data.md)
