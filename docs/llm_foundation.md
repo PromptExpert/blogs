@@ -7,3 +7,4 @@
 - [Llama 3精读](llm_foundation/llama3/llama3.md)
 - [Scaling Laws](llm_foundation/scaliing_laws.md)
 - [FLOPs](llm_foundation/FLOPs.md)
+- [学习率和Cosine Learning Rate Schedule](llm_foundation/cos_lr_schedule.md)
