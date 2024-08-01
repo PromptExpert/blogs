@@ -6,7 +6,7 @@
 
 不同学习率的影响就像：
 
-<img src="images/lr1.png" style="zoom: 80%;" />
+<img src="../images/lr1.png" style="zoom: 80%;" />
 
 学习率可能是最重要的参数了。如果你只有时间调整一个参数，那么就是学习率。
 
@@ -36,7 +36,7 @@ $$
 
 举例一个Cosine Annealing曲线：
 
-<img src="images/cos_lr.png" style="zoom: 30%;" />
+<img src="../images/cos_lr.png" style="zoom: 30%;" />
 
 *参考资料* 
 - [Cosine Annealing](https://paperswithcode.com/method/cosine-annealing)
