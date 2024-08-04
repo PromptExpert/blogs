@@ -11,7 +11,7 @@
 
 实验：在一个FLOPs范围内，训练各个大小的模型。然后，画出IsoFLOPs曲线。"Iso"来自希腊语，意思是“相同”或“等同”。IsoFLOP是指在给定的计算预算下，比较不同模型或实验结果的一种方法。
 
-<img src="../images/isoflops.png" style="zoom: 50%;" />
+![](../../images/isoflops.png)
 
 用抛物线拟合实验值，抛物线的最低点，视为给定计算预算下的compute-optimal模型。
 
@@ -22,6 +22,6 @@ $$
 
 用Fig 2中的数据拟合这个公式，得到 $(\alpha, A) = (0.53, 0.29)$，曲线如下：
 
-<img src="../images/llama_fig3.png" style="zoom: 50%;" />
+![](../../images/llama_fig3.png)
 
 将$3.8 × 10^{25}$代入，得到402B参数模型和16.55T token数。
