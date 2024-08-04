@@ -31,5 +31,7 @@ In addition to standard preference pair of (chosen, rejected) response, annotati
 
 ## Supervised Finetuning
 
-Our preference data annotation process is similar to Llama 2.
+SFT的训练部分没有什么特殊的，we finetune the pre-trained language model using a standard cross entropy loss on the target tokens (while masking loss on prompt tokens)。
+
+SFT的关键是数据的构建，详见[Llama3 SFT的数据构建](llm_foundation/llama3/llama3_sft_data.md)。
 
