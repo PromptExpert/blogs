@@ -8,6 +8,6 @@
 - [Llama3 Training Recipe](llm_foundation/llama3/llama3_recipe.md)
 - [Llama3 Post-Training](llm_foundation/llama3/llama3_post_training.md)
 - [Llama3 的SFT数据构建方法](llm_foundation/llama3/llama3_sft_data.md)
-- [Llama3多模态之图片视频](llama3_image_video.md)
+- [Llama3多模态之视觉](llm_foundation/llama3/llama3_vision.md)
 - [Llama3多模态之语音](llama3_speech.md)
 - [Llama3金句摘抄](llama3_quote.md)
