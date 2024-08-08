@@ -12,4 +12,4 @@
 - [BLIP-2 Explained](notes/blip2.md)
 - [RoPE Explained](notes/rope.md)
 - [DPO](notes/dpo.md)
-- [待研究](notes/questions.md)
+- [MiniGPT4和BLIP2的区别](notes/minigpt4_vs_blip2.md)
