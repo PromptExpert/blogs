@@ -13,3 +13,4 @@
 - [RoPE Explained](notes/rope.md)
 - [DPO](notes/dpo.md)
 - [MiniGPT4和BLIP2的区别](notes/minigpt4_vs_blip2.md)
+- [用最短的篇幅说清楚，DSPy是干吗的](notes/dspy_intro.md)
