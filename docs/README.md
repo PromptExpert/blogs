@@ -3,7 +3,8 @@
 ## 主页
 https://promptexpert.github.io/blogs
 
-## 最新文章   
+## 最新文章 
+- 2024.08.09 [Llama 3精读系列](llm_foundation/llama3/llama3.md)  
 - 2024.07.30 [学习率和Cosine Learning Rate Schedule](llm_foundation/cos_lr_schedule.md)
 - 2024.07.27 [大模型中的Attention](llm_foundation/llm_attention.md)
 - 2024.07.27 [SwiGLU激活函数](llm_foundation/swiglu.md)
@@ -12,6 +13,7 @@ https://promptexpert.github.io/blogs
 - 2024.06.15 [Normalization概述](llm_foundation/norm.md)
 
 ## 精选文章
+- [Llama 3精读系列](llm_foundation/llama3/llama3.md)  
 - [各种大模型架构，傻傻分不清楚？](llm_architecture.md)
 - [大模型中的Attention](llm_foundation/llm_attention.md)
 
