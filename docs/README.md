@@ -1,7 +1,6 @@
 # <img src="images/logo.jpg" alt="Logo" style="width: 40px; height: auto; vertical-align: middle; margin-left: 5px;">PromptExpert
 
-## Home
-
+## 主页
 https://promptexpert.github.io/blogs
 
 ## 最新文章   
