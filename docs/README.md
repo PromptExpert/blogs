@@ -1,6 +1,8 @@
 # <img src="images/logo.jpg" alt="Logo" style="width: 40px; height: auto; vertical-align: middle; margin-left: 5px;">PromptExpert
 
+## Home
 
+https://promptexpert.github.io/blogs
 
 ## 最新文章   
 - 2024.07.30 [学习率和Cosine Learning Rate Schedule](llm_foundation/cos_lr_schedule.md)
@@ -13,9 +15,6 @@
 ## 精选文章
 - [各种大模型架构，傻傻分不清楚？](llm_architecture.md)
 - [大模型中的Attention](llm_foundation/llm_attention.md)
-
-
-
 
 
 
