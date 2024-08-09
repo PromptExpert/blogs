@@ -6,6 +6,8 @@ Post-Training是Llama 3训练的重头戏，决定了模型的上限。
 
 > The backbone of our post-training strategy is a reward model and a language model. We first train a reward model on top of the pre-trained checkpoint using human-annotated preference data. We then finetune pre-trained checkpoints with SFT, and further align the checkpoints with DPO.
 
+![](../../images/llama3_post_approach.png)
+
 ## Reward Modeling
 RM在这里是用来挑选答案的，不是用来训练RLHF的。
 
