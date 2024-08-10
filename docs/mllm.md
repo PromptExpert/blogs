@@ -1,3 +1,3 @@
 # 目录
 
-* [多模态综述](mllm/mllm_surveys.md)
+- [MLLM论文精选（持续更新）](mllm/mllm_papers.md)
