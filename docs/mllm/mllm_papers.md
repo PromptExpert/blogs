@@ -19,3 +19,4 @@
 - 2024.04 [MM1- Methods, Analysis & Insights from Multimodal LLM Pre-training](https://arxiv.org/abs/2403.09611) 苹果出品。
 - 2024.05 [An Introduction to Vision-Language Modeling](https://arxiv.org/pdf/2405.17247) Meta出品，短小精悍。
 - 2024.05 [DeepSeek-VL: Towards Real-World Vision-Language Understanding](https://arxiv.org/pdf/2403.05525)
+- 2024.06 [Cambrian-1: A Fully Open, Vision-Centric Exploration of Multimodal LLMs](https://arxiv.org/abs/2406.16860) 提出以视觉为中心的benchmark CV-Bench，实验探究各个方面对VLM表现的影响，训练Cambrian-1模型。
