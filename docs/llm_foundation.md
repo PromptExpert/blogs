@@ -7,3 +7,4 @@
 - [Llama 3精读系列](llm_foundation/llama3/llama3.md)
 - [FLOPs](llm_foundation/FLOPs.md)
 - [学习率和Cosine Learning Rate Schedule](llm_foundation/cos_lr_schedule.md)
+- [训练时的显存如何计算？](llm_foundation/memory_usage_training.md)
