@@ -1,6 +1,8 @@
 # MLLM论文精选（持续更新）
 
 ## 最新动态
+- 2024.08 [UniBench: Visual Reasoning Requires Rethinking Vision-Language Beyond Scaling](https://arxiv.org/pdf/2408.04810)
+- 2024.08 [xGen-MM (BLIP-3): A Family of Open Large Multimodal Models](https://www.arxiv.org/abs/2408.08872) 
 - 2024.08 [LLaVA-OneVision: Easy Visual Task Transfer](https://arxiv.org/abs/2408.03326) LLaVA-NeXT系列的集大成。
 - 2024.08 [MiniCPM-V: A GPT-4V Level MLLM on Your Phone](https://arxiv.org/abs/2408.01800) 超强的小钢炮MLLM。
 - 2024.08 [SAM 2: Segment Anything in Images and Videos](https://arxiv.org/abs/2408.00714) 
