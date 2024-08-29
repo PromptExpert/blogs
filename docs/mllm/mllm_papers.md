@@ -1,6 +1,7 @@
 # MLLM论文精选（持续更新）
 
 ## 最新动态
+- 2024.08 [EAGLE: Exploring The Design Space for Multimodal LLMs with Mixture of Encoders](https://arxiv.org/pdf/2408.15998)
 - 2024.08 [A Practitioner's Guide to Continual Multimodal Pretraining](https://www.arxiv.org/abs/2408.14471)
 - 2024.08 [Building and better understanding vision-language models: insights and future directions](https://www.arxiv.org/pdf/2408.12637)
 - 2024.08 [LongVILA: Scaling Long-Context Visual Language Models for Long Videos](https://arxiv.org/abs/2408.10188)
