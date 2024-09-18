@@ -15,3 +15,4 @@
 - [MiniGPT4和BLIP2的区别](notes/minigpt4_vs_blip2.md)
 - [用最短的篇幅说清楚，DSPy是干吗的](notes/dspy_intro.md)
 - [Scaling Laws](notes/scaliing_laws.md)
+- [了解o1可以参考的一些资料](notes/o1_literatures.md)
