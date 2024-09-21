@@ -1,6 +1,7 @@
 # MLLM论文精选（持续更新）
 
 ## 最新动态
+- 2024.09 [MoMa: Efficient Early-Fusion Pre-training with Mixture of Modality-Aware Experts](https://arxiv.org/abs/2407.21770)
 - 2024.09 [General OCR Theory: Towards OCR-2.0 via a Unified End-to-end Model](https://arxiv.org/pdf/2409.01704v1) 
 - 2024.09 [VILA-U: a Unified Foundation Model Integrating Visual Understanding and Generation](https://www.arxiv.org/pdf/2409.04429) 
 - 2024.08 [Law of Vision Representation in MLLMs](https://arxiv.org/abs/2408.16357) 提出了AC score指标，AC score越高，视觉表示越好。
