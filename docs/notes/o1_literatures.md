@@ -25,6 +25,7 @@ Reading List:
 - [Reverse engineering OpenAI’s o1](https://www.interconnects.ai/p/reverse-engineering-openai-o1)
 - [Improving LLM Reasoning using SElf-generated data:RL and Verifiers](https://drive.google.com/file/d/1komQ7s9kPPvDx_8AxTh9A6tlfJA0j6dR/view)
 - [o1 发布后，信息量最大的圆桌对话：杨植麟、姜大昕、朱军探讨大模型技术路径](https://mp.weixin.qq.com/s/FSiCYyc1W6CFCT_eCwVSsw)
+- [Building OpenAI o1 (Extended Cut)](https://www.youtube.com/watch?v=tEzs3VHyBDM)
 
 References:
 
