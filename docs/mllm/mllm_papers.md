@@ -1,6 +1,7 @@
 # MLLM论文精选（持续更新）
 
 ## 最新动态
+- 2024.09 [NVLM: Open Frontier-Class Multimodal LLMs](https://arxiv.org/pdf/2409.11402)
 - 2024.09 [Viper: Open Mamba-based Vision-Language Models](https://github.com/EvanZhuang/viper/tree/main) 首个基于Mamba的VLM系列
 - 2024.09 [MoMa: Efficient Early-Fusion Pre-training with Mixture of Modality-Aware Experts](https://arxiv.org/abs/2407.21770)
 - 2024.09 [General OCR Theory: Towards OCR-2.0 via a Unified End-to-end Model](https://arxiv.org/pdf/2409.01704v1) 
