@@ -1,6 +1,10 @@
 # MLLM论文精选（持续更新）
 
 ## 最新动态
+- 2024.09 [Molmo and PixMo:Open Weights and Open Data for State-of-the-Art Multimodal Models](https://www.arxiv.org/abs/2409.17146)
+- 2024.09 [MIO: A Foundation Model on Multimodal Tokens](https://arxiv.org/abs/2409.17692)
+- 2024.09 [Phantom of Latent for Large Language and Vision Models](https://arxiv.org/abs/2409.14713)
+- 2024.09 [Llama 3.2: Revolutionizing edge AI and vision with open, customizable models](https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/)
 - 2024.09 [NVLM: Open Frontier-Class Multimodal LLMs](https://arxiv.org/pdf/2409.11402)
 - 2024.09 [Viper: Open Mamba-based Vision-Language Models](https://github.com/EvanZhuang/viper/tree/main) 首个基于Mamba的VLM系列
 - 2024.09 [MoMa: Efficient Early-Fusion Pre-training with Mixture of Modality-Aware Experts](https://arxiv.org/abs/2407.21770)
