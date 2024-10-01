@@ -1,6 +1,7 @@
 # MLLM论文精选（持续更新）
 
 ## 最新动态
+- 2024.09 [MM1.5: Methods, Analysis & Insights from Multimodal LLM Fine-tuning](https://arxiv.org/abs/2409.20566)
 - 2024.09 [Emu3: Next-Token Prediction is All You Need](https://emu.baai.ac.cn/about) BAAI出品。
 - 2024.09 [Molmo and PixMo:Open Weights and Open Data for State-of-the-Art Multimodal Models](https://www.arxiv.org/abs/2409.17146) Allen出品，同时开源模型和数据。
 - 2024.09 [MIO: A Foundation Model on Multimodal Tokens](https://arxiv.org/abs/2409.17692)
