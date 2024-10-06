@@ -3,7 +3,7 @@
 ## 最新动态
 - 2024.10 [LEOPARD : A Vision Language Model for Text-Rich Multi-Image Tasks](https://arxiv.org/pdf/2410.01744) 
 - 2024.10 [Video Instruction Tuning with Synthetic Data](https://llava-vl.github.io/blog/2024-09-30-llava-video/) LLaVA和字节合作开源视频指令数据
-- 2024.09 [MM1.5: Methods, Analysis & Insights from Multimodal LLM Fine-tuning](https://arxiv.org/abs/2409.20566)
+- 2024.09 [MM1.5: Methods, Analysis & Insights from Multimodal LLM Fine-tuning](https://arxiv.org/abs/2409.20566) 苹果MM1的升级版。
 - 2024.09 [Emu3: Next-Token Prediction is All You Need](https://emu.baai.ac.cn/about) BAAI出品。
 - 2024.09 [Molmo and PixMo:Open Weights and Open Data for State-of-the-Art Multimodal Models](https://www.arxiv.org/abs/2409.17146) Allen出品，同时开源模型和数据。
 - 2024.09 [MIO: A Foundation Model on Multimodal Tokens](https://arxiv.org/abs/2409.17692)
