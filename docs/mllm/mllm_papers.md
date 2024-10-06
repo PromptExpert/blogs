@@ -1,6 +1,7 @@
 # MLLM论文精选（持续更新）
 
 ## 最新动态
+- 2024.10 [Movie Gen: A Cast of Media Foundation Models](https://ai.meta.com/static-resource/movie-gen-research-paper) Meta出品
 - 2024.10 [LEOPARD : A Vision Language Model for Text-Rich Multi-Image Tasks](https://arxiv.org/pdf/2410.01744) 
 - 2024.10 [Video Instruction Tuning with Synthetic Data](https://llava-vl.github.io/blog/2024-09-30-llava-video/) LLaVA和字节合作开源视频指令数据
 - 2024.09 [MM1.5: Methods, Analysis & Insights from Multimodal LLM Fine-tuning](https://arxiv.org/abs/2409.20566) 苹果MM1的升级版。
