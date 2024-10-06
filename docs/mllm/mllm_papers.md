@@ -10,7 +10,7 @@
 - 2024.09 [Phantom of Latent for Large Language and Vision Models](https://arxiv.org/abs/2409.14713)
 - 2024.09 [Qwen2-VL: Enhancing Vision-Language Model’s Perception of the World at Any Resolution](https://arxiv.org/pdf/2409.12191)
 - 2024.09 [Llama 3.2: Revolutionizing edge AI and vision with open, customizable models](https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/) 
-- 2024.09 [NVLM: Open Frontier-Class Multimodal LLMs](https://arxiv.org/pdf/2409.11402)
+- 2024.09 [NVLM: Open Frontier-Class Multimodal LLMs](https://arxiv.org/pdf/2409.11402) 英伟达出品。
 - 2024.09 [Viper: Open Mamba-based Vision-Language Models](https://github.com/EvanZhuang/viper/tree/main) 首个基于Mamba的VLM系列
 - 2024.09 [MoMa: Efficient Early-Fusion Pre-training with Mixture of Modality-Aware Experts](https://arxiv.org/abs/2407.21770)
 - 2024.09 [General OCR Theory: Towards OCR-2.0 via a Unified End-to-end Model](https://arxiv.org/pdf/2409.01704v1) 
