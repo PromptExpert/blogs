@@ -1,6 +1,7 @@
 # MLLM论文精选（持续更新）
 
 ## 最新动态
+- 2024.10 [ARIA : An Open Multimodal Native Mixture-of-Experts Model](https://arxiv.org/pdf/2410.05993) 3.9B模型，号称超过 Pixtral-12B 和 Llama3.2-11。
 - 2024.10 [BAICHUAN-OMNI TECHNICAL REPORT](https://arxiv.org/pdf/2410.08565) 百川首个7B多模态模型。
 - 2024.10 [Pixtral 12B](https://arxiv.org/abs/2410.07073) Mistral出品。
 - 2024.10 [Movie Gen: A Cast of Media Foundation Models](https://ai.meta.com/static-resource/movie-gen-research-paper) Meta出品
