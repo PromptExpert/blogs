@@ -1,6 +1,7 @@
 # MLLM论文精选（持续更新）
 
 ## 最新动态
+- 2024.10 [Mini-InternVL: A Flexible-Transfer Pocket Multimodal Model with 5% Parameters and 90% Performance](https://arxiv.org/abs/2410.16261) 
 - 2024.10 [VILA-U: a Unified Foundation Model Integrating Visual Understanding and Generation](https://arxiv.org/pdf/2409.04429) VILA团队的统一理解和生成模型。
 - 2024.10 [Janus: Decoupling Visual Encoding for Unified Multimodal Understanding and Generation](https://arxiv.org/pdf/2410.13848) DeepSeek首个多模态模型。
 - 2024.10 [ARIA : An Open Multimodal Native Mixture-of-Experts Model](https://arxiv.org/pdf/2410.05993) 3.9B模型，号称超过 Pixtral-12B 和 Llama3.2-11。
