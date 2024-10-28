@@ -1,5 +1,7 @@
 # MLLM论文精选（持续更新）
 
+多模态交流QQ群: 237976286
+
 ## 最新动态
 - 2024.10 [Infinity-MM: Scaling Multimodal Performance with Large-Scale and High-Quality Instruction Data](https://arxiv.org/pdf/2410.18558) 智源开源4千万多模态指令数据。
 - 2024.10 [Mini-InternVL: A Flexible-Transfer Pocket Multimodal Model with 5% Parameters and 90% Performance](https://arxiv.org/abs/2410.16261) 
@@ -34,7 +36,6 @@
 - 2024.08 [LLaVA-OneVision: Easy Visual Task Transfer](https://arxiv.org/abs/2408.03326) LLaVA-NeXT系列的集大成。
 - 2024.08 [MiniCPM-V: A GPT-4V Level MLLM on Your Phone](https://arxiv.org/abs/2408.01800) 超强的小钢炮MLLM。
 - 2024.08 [SAM 2: Segment Anything in Images and Videos](https://arxiv.org/abs/2408.00714) 
-- 2024.06 [Cambrian-1: A Fully Open, Vision-Centric Exploration of Multimodal LLMs](https://arxiv.org/abs/2406.16860) 提出以视觉为中心的benchmark CV-Bench。
 
 ## 经典论文
 - 2021.02 [Learning Transferable Visual Models From Natural Language Supervision](https://arxiv.org/pdf/2103.00020) CLIP

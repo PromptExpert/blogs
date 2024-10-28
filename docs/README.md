@@ -12,10 +12,12 @@ https://promptexpert.github.io/blogs
 - 2024.07.27 [大模型中的Attention](llm_foundation/llm_attention.md)
 
 
-## 个人业务
+## 联系
 - [个人业务](business.md)
+- [社群](community.md)
 
 ## 精选文章
+- [MLLM论文精选（持续更新）](mllm/mllm_papers.md)
 - [Llama 3精读系列](llm_foundation/llama3/llama3.md)  
 - [各种大模型架构，傻傻分不清楚？](llm_architecture.md)
 - [大模型中的Attention](llm_foundation/llm_attention.md)
