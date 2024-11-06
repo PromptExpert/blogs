@@ -3,6 +3,8 @@
 多模态交流QQ群: 237976286
 
 ## 最新动态
+- 2024.11 [Attacking Vision-Language Computer Agents via Pop-ups](https://arxiv.org/abs/2411.02391) 
+- 2024.11 [Know Where You're Uncertain When Planning with Multimodal Foundation Models: A Formal Framework](https://arxiv.org/abs/2411.01639) 提高多模态基础模型在处理不确定性时的能力，从而增强机器人在规划任务中的可靠性。
 - 2024.10 [Mini-Omni2: Towards Open-source GPT-4o with Vision, Speech and Duplex Capabilities](https://arxiv.org/abs/2410.11190)
 - 2024.10 [LongVU: Spatiotemporal Adaptive Compression for Long Video-Language Understanding](https://arxiv.org/pdf/2410.17434) Meta提出长视频理解方法。
 - 2024.10 [Infinity-MM: Scaling Multimodal Performance with Large-Scale and High-Quality Instruction Data](https://arxiv.org/pdf/2410.18558) 智源开源4千万多模态指令数据。
