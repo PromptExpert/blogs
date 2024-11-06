@@ -3,6 +3,7 @@
 多模态交流QQ群: 237976286
 
 ## 最新动态
+- 2024.10 [Mini-Omni2: Towards Open-source GPT-4o with Vision, Speech and Duplex Capabilities](https://arxiv.org/abs/2410.11190)
 - 2024.10 [LongVU: Spatiotemporal Adaptive Compression for Long Video-Language Understanding](https://arxiv.org/pdf/2410.17434) Meta提出长视频理解方法。
 - 2024.10 [Infinity-MM: Scaling Multimodal Performance with Large-Scale and High-Quality Instruction Data](https://arxiv.org/pdf/2410.18558) 智源开源4千万多模态指令数据。
 - 2024.10 [Mini-InternVL: A Flexible-Transfer Pocket Multimodal Model with 5% Parameters and 90% Performance](https://arxiv.org/abs/2410.16261) 
