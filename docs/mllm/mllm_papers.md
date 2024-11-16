@@ -3,6 +3,7 @@
 多模态交流QQ群: 237976286
 
 ## 最新动态
+- 2024.11 [LLM2CLIP: Powerful Language Model Unlocks Richer Visual Representation](https://microsoft.github.io/LLM2CLIP/) 微软出品，将CLIP中的text encoder替换成LLM，支持更长的上下文和更复杂的文本，有更好的topk检索效果。
 - 2024.11 [HourVideo: 1-Hour Video-Language Understanding](https://arxiv.org/abs/2411.04998) 李飞飞团队提出长视频理解评测集
 - 2024.11 [Mixture-of-Transformers: A Sparse and Scalable Architecture for Multi-Modal Foundation Models](https://arxiv.org/abs/2411.04996)
 - 2024.11 [MM-EMBED: UNIVERSAL MULTIMODAL RETRIEVAL WITH MULTIMODAL LLMS](https://arxiv.org/pdf/2411.02571) 英伟达提出基于MLLM的通用多模态检索。
