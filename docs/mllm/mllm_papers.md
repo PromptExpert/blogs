@@ -3,6 +3,7 @@
 多模态交流QQ群: 237976286
 
 ## 最新动态
+- 2024.11 [Pixtral Large](https://mistral.ai/news/pixtral-large/) Mistral发布124B的多模态大模型。
 - 2024.11 [OmniVision-968M: World's Smallest Vision Language Model](https://nexa.ai/blogs/omni-vision)
 - 2024.11 [LLM2CLIP: Powerful Language Model Unlocks Richer Visual Representation](https://microsoft.github.io/LLM2CLIP/) 微软出品，将CLIP中的text encoder替换成LLM，支持更长的上下文和更复杂的文本，有更好的topk检索效果。
 - 2024.11 [HourVideo: 1-Hour Video-Language Understanding](https://arxiv.org/abs/2411.04998) 李飞飞团队提出长视频理解评测集
