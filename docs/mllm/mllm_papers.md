@@ -3,6 +3,7 @@
 多模态交流QQ群: 237976286
 
 ## 最新动态
+- 2024.11 [Multimodal Autoregressive Pre-training of Large Vision Encoders](https://arxiv.org/pdf/2411.14402) 苹果提出全新的视觉编码器训练方式，支持多模态。
 - 2024.11 [Pixtral Large](https://mistral.ai/news/pixtral-large/) Mistral发布124B的多模态大模型。
 - 2024.11 [OmniVision-968M: World's Smallest Vision Language Model](https://nexa.ai/blogs/omni-vision)
 - 2024.11 [LLM2CLIP: Powerful Language Model Unlocks Richer Visual Representation](https://microsoft.github.io/LLM2CLIP/) 微软出品，将CLIP中的text encoder替换成LLM，支持更长的上下文和更复杂的文本，有更好的topk检索效果。
