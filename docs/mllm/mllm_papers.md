@@ -3,6 +3,7 @@
 多模态交流QQ群: 237976286
 
 ## 最新动态
+- 2024.12 [InternVL 2.5](https://hf-mirror.com/collections/OpenGVLab/internvl-25-673e1019b66e2218f68d7c1c)  1B 到 78B 都有。
 - 2024.12 [Qwen2-VL-72B Model](https://hf-mirror.com/Qwen/Qwen2-VL-72B) 
 - 2024.12 [Florence-VL: Enhancing Vision-Language Models with Generative Vision Encoder and Depth-Breadth Fusion](https://arxiv.org/abs/2412.04424) 
 - 2024.12 [NVILA: Efficient Frontier Visual Language Models](https://arxiv.org/abs/2412.04468) NVIDIA出品，同时优化效率和准确率的VLM。
