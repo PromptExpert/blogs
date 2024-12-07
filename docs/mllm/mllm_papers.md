@@ -3,6 +3,7 @@
 多模态交流QQ群: 237976286
 
 ## 最新动态
+- 2024.12 [NVILA: Efficient Frontier Visual Language Models](https://arxiv.org/abs/2412.04468) NVIDIA出品，同时优化效率和准确率的VLM。
 - 2024.12 [PaliGemma 2:A Family of Versatile VLMs for Transfer](https://arxiv.org/pdf/2412.03555) 
 - 2024.11 [Multimodal Autoregressive Pre-training of Large Vision Encoders](https://arxiv.org/pdf/2411.14402) 苹果提出全新的视觉编码器训练方式，支持多模态。
 - 2024.11 [Pixtral Large](https://mistral.ai/news/pixtral-large/) Mistral发布124B的多模态大模型。
