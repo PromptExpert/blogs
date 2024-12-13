@@ -3,6 +3,7 @@
 多模态交流QQ群: 237976286
 
 ## 最新动态
+- 2024.12 [DeepSeek-VL2](https://github.com/deepseek-ai/DeepSeek-VL2/tree/main) 
 - 2024.12 [POINTS1.5 Buiding a Vision-Language Model towards Real World Applications](https://github.com/WePOINTS/WePOINTS/blob/main/POINTS1_5_preview.pdf) 微信出品。
 - 2024.12 [InternVL 2.5](https://hf-mirror.com/collections/OpenGVLab/internvl-25-673e1019b66e2218f68d7c1c)  1B 到 78B 都有。
 - 2024.12 [Qwen2-VL-72B Model](https://hf-mirror.com/Qwen/Qwen2-VL-72B) 
