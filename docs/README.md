@@ -13,7 +13,6 @@ https://promptexpert.github.io/blogs
 
 
 ## 联系
-- [个人业务](business.md)
 - [社群](community.md)
 
 ## 精选文章
