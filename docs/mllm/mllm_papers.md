@@ -5,7 +5,8 @@
 ## 最新动态
 - 2024.12 [MetaMorph: Multimodal Understanding and Generation via Instruction Tuning](https://arxiv.org/abs/2412.14164v1) 
 - 2024.12 [Apollo: An Exploration of Video Understanding in Large Multimodal Models](https://apollo-lmms.github.io/) Meta出品的Video-LLM
-- 2024.12 [DeepSeek-VL2](https://github.com/deepseek-ai/DeepSeek-VL2/tree/main) 
+- 2024.12 [DeepSeek-VL2](https://github.com/deepseek-ai/DeepSeek-VL2/tree/main)
+- 2024.12 [FastVLM: Efficient Vision Encoding for Vision Language Models](https://arxiv.org/html/2412.13303v1)
 - 2024.12 [POINTS1.5 Buiding a Vision-Language Model towards Real World Applications](https://github.com/WePOINTS/WePOINTS/blob/main/POINTS1_5_preview.pdf) 微信出品。
 - 2024.12 [InternVL 2.5](https://hf-mirror.com/collections/OpenGVLab/internvl-25-673e1019b66e2218f68d7c1c)  1B 到 78B 都有。
 - 2024.12 [Qwen2-VL-72B Model](https://hf-mirror.com/Qwen/Qwen2-VL-72B) 
