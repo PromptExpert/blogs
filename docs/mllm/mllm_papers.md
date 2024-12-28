@@ -67,8 +67,12 @@
 - 2023.04 [Visual Instruction Tuning](https://arxiv.org/abs/2304.08485) LLaVA系列的第一篇文章。
 - 2023.05 [InstructBLIP: Towards General-purpose Vision-Language Models with Instruction Tuning](https://arxiv.org/abs/2305.06500) 
 - 2023.05 [Segment Anything](https://arxiv.org/abs/2304.02643) SAM
-- 2023.12 [Gemini: A Family of Highly Capable Multimodal Models](https://arxiv.org/pdf/2312.11805) 
+- 2023.12 [Gemini: A Family of Highly Capable Multimodal Models](https://arxiv.org/pdf/2312.11805)
+- 2024.01 [AGENT AI:SURVEYING THE HORIZONS OF MULTIMODAL INTERACTION](https://arxiv.org/pdf/2401.03568) 李飞飞团队出品。
 - 2024.04 [MM1- Methods, Analysis & Insights from Multimodal LLM Pre-training](https://arxiv.org/abs/2403.09611) 苹果出品。
 - 2024.05 [An Introduction to Vision-Language Modeling](https://arxiv.org/pdf/2405.17247) Meta出品，短小精悍。
 - 2024.05 [DeepSeek-VL: Towards Real-World Vision-Language Understanding](https://arxiv.org/pdf/2403.05525)
 - 2024.06 [Cambrian-1: A Fully Open, Vision-Centric Exploration of Multimodal LLMs](https://arxiv.org/abs/2406.16860) 提出以视觉为中心的benchmark CV-Bench，实验探究各个方面对VLM表现的影响，训练Cambrian-1模型。
+- 2024.09 [Llama 3.2: Revolutionizing edge AI and vision with open, customizable models](https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/)
+- 2024.09 [Qwen2-VL: Enhancing Vision-Language Model’s Perception of the World at Any Resolution](https://arxiv.org/pdf/2409.12191)
+- 2024.09 [Molmo and PixMo:Open Weights and Open Data for State-of-the-Art Multimodal Models](https://www.arxiv.org/abs/2409.17146) Allen出品，同时开源模型和数据。
