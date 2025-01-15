@@ -3,6 +3,7 @@
 多模态交流QQ群: 237976286
 
 ## 最新动态
+- 2025.01 [VideoRAG: Retrieval-Augmented Generation over Video Corpus](https://arxiv.org/pdf/2501.05874)
 - 2025.01 [MiniCPM-o](https://github.com/OpenBMB/MiniCPM-o) MiniCPM-V升级版。
 - 2025.01 [Imagine while Reasoning in Space: Multimodal Visualization-of-Thought](https://arxiv.org/abs/2501.07542)
 - 2025.01 [Sa2VA: Marrying SAM2 with LLaVA for Dense Grounded Understanding of Images and Videos](https://github.com/magic-research/Sa2VA)
