@@ -3,6 +3,7 @@
 多模态交流QQ群: 237976286
 
 ## 最新动态
+- 2025.01 [Imagine while Reasoning in Space: Multimodal Visualization-of-Thought](https://arxiv.org/abs/2501.07542)
 - 2025.01 [Sa2VA: Marrying SAM2 with LLaVA for Dense Grounded Understanding of Images and Videos](https://github.com/magic-research/Sa2VA)
 - 2025.01 [2.5 Years in Class: A Multimodal Textbook for Vision-Language Pretraining](https://arxiv.org/abs/2501.00958) 达摩院开源的多模态数据集，由22,000小时的上课视频而来。
 - 2024.12 [MetaMorph: Multimodal Understanding and Generation via Instruction Tuning](https://arxiv.org/abs/2412.14164v1) 
