@@ -3,6 +3,7 @@
 多模态交流QQ群: 237976286
 
 ## 最新动态
+- 2025.01 [Qwen2.5 VL](https://qwenlm.github.io/blog/qwen2.5-vl/)
 - 2025.01 [VideoLLaMA 3: Frontier Multimodal Foundation Models for Image and Video Understanding](https://arxiv.org/abs/2501.13106)
 - 2025.01 [vikhyatk/moondream2](https://hf-mirror.com/vikhyatk/moondream2) 
 - 2025.01 [VideoRAG: Retrieval-Augmented Generation over Video Corpus](https://arxiv.org/pdf/2501.05874)
