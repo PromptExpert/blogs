@@ -3,6 +3,7 @@
 多模态交流QQ群: 237976286
 
 ## 最新动态
+- 2025.01 [Multimodal Open R1](https://github.com/EvolvingLMMs-Lab/open-r1-multimodal)
 - 2025.01 [Eagle 2: Building Post-Training Data Strategies from Scratch for Frontier Vision-Language Models](https://arxiv.org/abs/2501.14818)
 - 2025.01 [Qwen2.5 VL](https://qwenlm.github.io/blog/qwen2.5-vl/)
 - 2025.01 [VideoLLaMA 3: Frontier Multimodal Foundation Models for Image and Video Understanding](https://arxiv.org/abs/2501.13106)
