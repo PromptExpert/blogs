@@ -3,6 +3,7 @@
 多模态交流QQ群: 237976286
 
 ## 最新动态
+- 2025.02 [mmE5: Improving Multimodal Multilingual Embeddings via High-quality Synthetic Data](https://arxiv.org/pdf/2502.08468)
 - 2025.02 [Ovis2](https://github.com/AIDC-AI/Ovis)
 - 2025.02 [ALIGNVLM: Bridging Vision and Language Latent Spaces for Multimodal Understanding](https://arxiv.org/pdf/2502.01341)
 - 2025.01 [Multimodal Open R1](https://github.com/EvolvingLMMs-Lab/open-r1-multimodal)
