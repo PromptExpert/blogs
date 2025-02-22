@@ -3,6 +3,7 @@
 多模态交流QQ群: 237976286
 
 ## 最新动态
+- 2025.02 [SigLIP 2: Multilingual Vision-Language Encoders with Improved Semantic Understanding, Localization, and Dense Features](https://arxiv.org/abs/2502.14786)
 - 2025.02 [Qwen2.5-VL Technical Report](https://arxiv.org/abs/2502.13923)
 - 2025.02 [mmE5: Improving Multimodal Multilingual Embeddings via High-quality Synthetic Data](https://arxiv.org/pdf/2502.08468)
 - 2025.02 [Ovis2](https://github.com/AIDC-AI/Ovis)
