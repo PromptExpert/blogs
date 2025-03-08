@@ -6,6 +6,7 @@ https://promptexpert.github.io/blogs
 注：在GitHub上看可能出现文件路径问题，建议点击博客主页浏览。
 
 ## 最新文章 
+- 2025.03.08 [关于AI搜索的一些想法](misellaneous/ai_search_review.md)
 - 2025.02.xx [MLLM论文精选（持续更新）](mllm/mllm_papers.md)
 - 2024.08.09 [Llama 3精读系列](llm_foundation/llama3/llama3.md)  
 - 2024.07.30 [学习率和Cosine Learning Rate Schedule](llm_foundation/cos_lr_schedule.md)
