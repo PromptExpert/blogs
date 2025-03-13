@@ -3,6 +3,7 @@
 多模态交流QQ群: 237976286
 
 ## 最新动态
+- 2025.03 [Gemma 3 Technical Report](https://storage.googleapis.com/deepmind-media/gemma/Gemma3Report.pdf)
 - 2025.03 [AgiBot World Colosseo: Large-scale Manipulation Platform for Scalable and Intelligent Embodied System](https://agibot-world.com/blog/agibot_go1.pdf)
 - 2025.02 [SigLIP 2: Multilingual Vision-Language Encoders with Improved Semantic Understanding, Localization, and Dense Features](https://arxiv.org/abs/2502.14786)
 - 2025.02 [Qwen2.5-VL Technical Report](https://arxiv.org/abs/2502.13923)
